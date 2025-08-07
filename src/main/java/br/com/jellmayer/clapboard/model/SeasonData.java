@@ -3,7 +3,8 @@ package br.com.jellmayer.clapboard.model;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record SerieData (@JsonAlias("Title") String title,
-                         Integer totalSeasons,
-                         String imdbRating) {}
+public record SeasonData(@JsonAlias("Season") Integer seasonNumber,
+                         @JsonAlias("Episodes") List<EpisodeData> episodes) {}
